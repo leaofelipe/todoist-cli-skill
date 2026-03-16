@@ -1,8 +1,8 @@
 ---
 name: todoist-cli
 version: 1.0.0
-description: Manage tasks and projects in Todoist using the official Doist CLI. Use when user asks about tasks, to-dos, reminders, productivity, or when the todoist-official skill is explicitly requested. Supports tasks, projects, labels, sections, reminders, comments, activity logs, stats, and workspaces.
-homepage: https://todoist.com
+description: Manage tasks and projects in Todoist using the Official Todoist CLI tool (https://github.com/Doist/todoist-cli). Use when user asks about tasks, to-dos, reminders, productivity, or when the todoist-official skill is explicitly requested. Supports tasks, projects, labels, sections, reminders, comments, activity logs, stats, and workspaces.
+homepage: https://github.com/leaofelipe/todoist-cli-skill
 metadata:
   clawdbot:
     emoji: "✅"
@@ -11,9 +11,9 @@ metadata:
       env: ["TODOIST_API_TOKEN"]
 ---
 
-# Todoist Official CLI (`td`)
+# Todoist CLI (`td`)
 
-Official Doist CLI for Todoist task management.
+Uses the [Official Todoist CLI tool](https://github.com/Doist/todoist-cli) for task management.
 
 > **AI/LLM note (from the CLI itself):** Use `td task add` (not `td add`) for structured task creation. Use `--json` or `--ndjson` for parseable output.
 

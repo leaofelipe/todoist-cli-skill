@@ -1,12 +1,10 @@
 # todoist-cli — OpenClaw Skill
 
-An [OpenClaw](https://openclaw.ai) agent skill that gives your AI full control over **Todoist** using the **official Doist CLI** (`@doist/todoist-cli`).
+An [OpenClaw](https://openclaw.ai) agent skill that gives your AI full control over **Todoist** using the [Doist CLI](https://github.com/Doist/todoist-cli) (`@doist/todoist-cli`).
 
 Instead of relying on an MCP server or API integration, this skill teaches your agent to drive Todoist through the `td` command-line tool — making it lightweight, portable, and easy to set up.
 
-## What Problem Does This Solve?
-
-Most Todoist integrations for AI agents require setting up an MCP server with OAuth or API credentials wired into the agent runtime. This skill takes a different approach: it uses the official `td` CLI that Doist publishes, which handles auth itself. Your agent just runs shell commands — no extra infrastructure needed.
+This skill uses the [Official Todoist CLI tool](https://github.com/Doist/todoist-cli) (`td`) — no MCP server or extra infrastructure needed.
 
 ## Requirements
 
