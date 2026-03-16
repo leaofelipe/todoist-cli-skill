@@ -1,6 +1,6 @@
 ---
 name: todoist-cli-skill
-version: 1.0.4
+version: 1.0.5
 description: Manage tasks and projects in Todoist using the Official Todoist CLI tool (https://github.com/Doist/todoist-cli). Use when user asks about tasks, to-dos, reminders, productivity, or when the todoist-official skill is explicitly requested. Supports tasks, projects, labels, sections, reminders, comments, activity logs, stats, and workspaces.
 homepage: https://github.com/leaofelipe/todoist-cli-skill
 metadata:
@@ -25,13 +25,13 @@ npm install -g @doist/todoist-cli
 
 ## Setup
 
+Get your API token at: https://todoist.com/app/settings/integrations/developer
+
 ```bash
 td auth token "your-token"
 # or
 export TODOIST_API_TOKEN="your-token"
 ```
-
-Get token at: https://todoist.com/app/settings/integrations/developer
 
 ## Viewing Tasks
 
