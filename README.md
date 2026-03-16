@@ -1,6 +1,12 @@
 # todoist-cli — OpenClaw Skill
 
-An [OpenClaw](https://openclaw.ai) agent skill for managing Todoist using the **official Doist CLI** (`@doist/todoist-cli`).
+An [OpenClaw](https://openclaw.ai) agent skill that gives your AI full control over **Todoist** using the **official Doist CLI** (`@doist/todoist-cli`).
+
+Instead of relying on an MCP server or API integration, this skill teaches your agent to drive Todoist through the `td` command-line tool — making it lightweight, portable, and easy to set up.
+
+## What Problem Does This Solve?
+
+Most Todoist integrations for AI agents require setting up an MCP server with OAuth or API credentials wired into the agent runtime. This skill takes a different approach: it uses the official `td` CLI that Doist publishes, which handles auth itself. Your agent just runs shell commands — no extra infrastructure needed.
 
 ## Requirements
 
@@ -9,47 +15,63 @@ An [OpenClaw](https://openclaw.ai) agent skill for managing Todoist using the **
 
 ## Installation
 
-Install the CLI:
+**1. Install the CLI:**
 
 ```bash
 npm install -g @doist/todoist-cli
 ```
 
-Set up your API token:
+**2. Authenticate:**
 
 ```bash
-export TODOIST_API_TOKEN="your-token"
-# or
-td auth token "your-token"
+td auth token "your-token-here"
+# or export it as an environment variable:
+export TODOIST_API_TOKEN="your-token-here"
 ```
 
-## What This Skill Does
-
-Gives your OpenClaw agent full access to Todoist via the `td` CLI. Covers:
-
-- **Tasks** — view today, add, complete, update, delete, reschedule, move
-- **Projects** — list, create, archive, delete
-- **Labels & Sections** — full management
-- **Reminders** — add and manage task reminders
-- **Comments** — add and view comments on tasks
-- **Activity & Stats** — view logs, karma, and productivity stats
-- **Upcoming** — see tasks for the next N days
-- **Completed** — review what you've done
-
-## Quick Examples
+**3. Install this skill** into your OpenClaw agent:
 
 ```bash
-td today                                        # What's due today
-td task add "Review PR" --due "today" --priority p1 --project "Work"
-td task complete <ref>                          # Mark as done
-td upcoming 7                                   # Next 7 days
-td task list --filter "p1 & overdue"           # Overdue priority 1 tasks
-td stats                                        # Karma + productivity
+clawhub install todoist-cli
 ```
 
-## Skill File
+## What Your Agent Can Do
 
-The `SKILL.md` contains full command reference and usage examples for the AI agent.
+Once this skill is active, your agent understands natural language requests and translates them into `td` commands:
+
+| What you say | What the agent does |
+|---|---|
+| "What's on my plate today?" | `td today` |
+| "Add 'Review PR' to Work, priority 1" | `td task add "Review PR" --project "Work" --priority p1` |
+| "Mark the grocery task as done" | finds it, then `td task complete <ref>` |
+| "What did I finish this week?" | `td completed --since <date>` |
+| "Remind me to call the dentist tomorrow" | `td task add ... + td reminder add ...` |
+
+### Full Feature Coverage
+
+- **Tasks** — view today/upcoming/inbox, add, complete, update, delete, reschedule, move between projects
+- **Projects** — list, create, rename, archive, delete
+- **Sections** — organize tasks within projects
+- **Labels** — create and apply labels for filtering
+- **Reminders** — add time-based reminders to any task
+- **Comments** — add notes to tasks or projects
+- **Activity & Stats** — view recent activity log, karma score, and productivity stats
+
+## Quick Reference
+
+```bash
+td today                                         # Due today + overdue
+td upcoming 7                                    # Next 7 days
+td task add "Buy milk" --due "tomorrow" --priority p2
+td task list --filter "p1 & overdue"            # Overdue high-priority tasks
+td task complete <ref>                           # Complete a task
+td task reschedule <ref> "next monday"           # Reschedule (preserves recurrence)
+td stats                                         # Karma + productivity overview
+```
+
+## How It Works
+
+The `SKILL.md` file in this package contains the full command reference and behavioral instructions that the OpenClaw agent loads at runtime. When you install this skill, the agent knows which commands to run, how to parse their output, and how to handle edge cases (like recurring tasks, fuzzy name matching, etc.).
 
 ## License
 
