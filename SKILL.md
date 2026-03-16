@@ -1,6 +1,6 @@
 ---
-name: todoist-cli
-version: 1.0.0
+name: todoist-cli-skill
+version: 1.0.3
 description: Manage tasks and projects in Todoist using the Official Todoist CLI tool (https://github.com/Doist/todoist-cli). Use when user asks about tasks, to-dos, reminders, productivity, or when the todoist-official skill is explicitly requested. Supports tasks, projects, labels, sections, reminders, comments, activity logs, stats, and workspaces.
 homepage: https://github.com/leaofelipe/todoist-cli-skill
 metadata:

@@ -1,8 +1,8 @@
-# todoist-cli — OpenClaw Skill
+# todoist-cli-skill — OpenClaw Skill
+
+![version](https://img.shields.io/badge/version-1.0.3-blue) [![clawhub](https://img.shields.io/badge/🦞_clawhub-1.0.3-blue)](https://clawhub.ai/leaofelipe/todoist-cli-skill)
 
 An [OpenClaw](https://openclaw.ai) agent skill that gives your AI full control over **Todoist** using the [Doist CLI](https://github.com/Doist/todoist-cli) (`@doist/todoist-cli`).
-
-Instead of relying on an MCP server or API integration, this skill teaches your agent to drive Todoist through the `td` command-line tool — making it lightweight, portable, and easy to set up.
 
 This skill uses the [Official Todoist CLI tool](https://github.com/Doist/todoist-cli) (`td`) — no MCP server or extra infrastructure needed.
 
@@ -30,7 +30,7 @@ export TODOIST_API_TOKEN="your-token-here"
 **3. Install this skill** into your OpenClaw agent:
 
 ```bash
-clawhub install todoist-cli
+clawhub install todoist-cli-skill
 ```
 
 ## What Your Agent Can Do
