@@ -1,6 +1,6 @@
 # todoist-cli-skill — OpenClaw Skill
 
-![version](https://img.shields.io/badge/version-1.0.4-blue) [![clawhub](https://img.shields.io/badge/🦞_clawhub-1.0.4-blue)](https://clawhub.ai/leaofelipe/todoist-cli-skill)
+![version](https://img.shields.io/badge/version-1.0.5-blue) [![clawhub](https://img.shields.io/badge/🦞_clawhub-1.0.5-blue)](https://clawhub.ai/leaofelipe/todoist-cli-skill)
 
 An [OpenClaw](https://openclaw.ai) agent skill that gives your AI full control over **Todoist** using the [Doist CLI](https://github.com/Doist/todoist-cli) (`@doist/todoist-cli`).
 
